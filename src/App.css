@@ -1,0 +1,17 @@
+#root{
+    text-align: center;
+}
+
+.details{
+    background: #999999;
+    width: calc(100% - 40px);
+    height: 80vh;
+    overflow: auto;
+    padding:0 20px;
+}
+
+@media(max-width:64em){
+    .detail{
+        height: 40vh;
+    }
+}
