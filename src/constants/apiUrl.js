@@ -1,3 +1,3 @@
-export const BACKEND_WEATHER = "http://localhost:5000/v1/current/";
-export const BACKEND_FORECAST = "http://localhost:5000/v1/forecast/";
-export const BACKEND_LOCATION = "http://localhost:5000/v1/location/";
+export const BACKEND_WEATHER = "https://martinbobbio-weather.herokuapp.com/v1/current/";
+export const BACKEND_FORECAST = "https://martinbobbio-weather.herokuapp.com/v1/forecast/";
+export const BACKEND_LOCATION = "https://martinbobbio-weather.herokuapp.com/v1/location/";
