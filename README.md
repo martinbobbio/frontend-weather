@@ -14,9 +14,8 @@ Test de desarrollo usando la api de OpenWeather para consultar el clima actual y
 Otra api consultada es la de Id-Api para consultar la ubicación actual y luego apartir de eso el clima de la ciudad.
 Las librerías usadas sosn redux, supertest y express.
 
-# Capturas
 
-### Página
+### Ejemplo
 
 ![Image of pagina](public/pagina.png)
 
