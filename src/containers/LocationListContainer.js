@@ -10,7 +10,8 @@ class LocationListContainer extends Component {
   componentDidMount() {
     const { setWeather, setSelectedCity, cities, city } = this.props;
     setWeather(cities);
-    setSelectedCity(city);
+    if(!city) setSelectedCity("Virginia,us");
+    else setSelectedCity(city);
   }
 
   handleSelectionLocation = city => {

@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import WeatherData from "./../WeatherLocation/WeatherData";
 
-const ForestItem = ({weekDay, hour, data}) => (
+const ForestItem = ({weekDay, data}) => (
     <div>
-        <h2>{formatDay(weekDay)} - {hour}hs</h2>
+        <h2>{formatDay(weekDay)}</h2>
         <WeatherData data={data}/>
     </div>
 
@@ -25,7 +25,6 @@ const formatDay = (value) => {
 
 ForestItem.propTypes = {
     weekDay: PropTypes.string.isRequired,
-    hour: PropTypes.number.isRequired,
     data: PropTypes.shape({
         temperature: PropTypes.number.isRequired,
         weatherState: PropTypes.string.isRequired,

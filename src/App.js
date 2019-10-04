@@ -10,7 +10,6 @@ import "./App.css";
 
 const cities = [
   "Buenos Aires,ar",
-  "Washington,us",
   "Bogota,col",
   "Melbourne,au",
   "Madrid,es",

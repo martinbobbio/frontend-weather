@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BACKEND_FORECAST, BACKEND_WEATHER } from "../constants/apiUrl";
+import { BACKEND_FORECAST, BACKEND_WEATHER, BACKEND_LOCATION } from "../constants/apiUrl";
 import transformForecast from "./../services/transformForecast";
 import transformWeather from "./../services/transformWeather";
 
@@ -35,16 +35,22 @@ export const setSelectedCity = payload => {
 export const setWeather = payload => {
   
   return dispatch => {
-    payload.forEach(city => {
-      dispatch(getWeatherCity(city));
-      return axios.get(BACKEND_WEATHER+city)
-      .then(response => {
-        return response.data.weather;
-      })
-      .then(weather_data => {
-        const weather = transformWeather(weather_data);
-        dispatch(setWeatherCity({city,weather}));
+    axios.get(BACKEND_LOCATION).then(response => {
+      const { regionName, countryCode } = response.data.location
+      const city = regionName+","+countryCode.toLowerCase()
+      payload.unshift(city)
+      payload.forEach(city => {
+        dispatch(getWeatherCity(city));
+        return axios.get(BACKEND_WEATHER+city)
+        .then(response => {
+          return response.data.weather;
+        })
+        .then(weather_data => {
+          const weather = transformWeather(weather_data);
+          dispatch(setWeatherCity({city,weather}));
+        });
       });
-    });
+    })
+    
   }
 }
