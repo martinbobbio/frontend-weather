@@ -14,6 +14,6 @@ if(process.env.REACT_APP_STAGE === 'prod'){
   BACKEND_LOCATION = "http://localhost:8080/v1/location/";
 }
 
-export const BACKEND_WEATHER;
-export const BACKEND_FORECAST;
-export const BACKEND_LOCATION;
+export BACKEND_WEATHER;
+export BACKEND_FORECAST;
+export BACKEND_LOCATION;
